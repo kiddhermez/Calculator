@@ -1,6 +1,7 @@
 import Navbar from "@/Components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import PanelInfo from "@/Components/PanelInfo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
-        <div className="h-screen bg-slate-500 flex flex-col items-center ">
+        <div className="flex h-screen flex-col items-center bg-slate-500 ">
           <Navbar />
+          <PanelInfo />
           {children}
         </div>
       </body>
