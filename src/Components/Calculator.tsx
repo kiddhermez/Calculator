@@ -81,7 +81,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="my-auto h-max w-[90vw] rounded-2xl bg-[#A2D2FF] dark:bg-[#282F44] p-8 text-center md:w-[85vw]">
+    <div className="my-auto h-max w-[90vw] rounded-2xl bg-[#A2D2FF] p-8 text-center dark:bg-[#282F44] md:w-[85vw]">
       <section className="grid h-28 place-content-center rounded-lg bg-[#8eb5db] dark:bg-[#1d2231] md:p-10">
         <Formule
           boxedIndex={selectedIndex}
@@ -96,7 +96,7 @@ const Calculator = () => {
       <section className="mt-5 grid grid-cols-3 gap-8">
         {[...Array(9)].map((x, i) => (
           <Buttons
-            className="rounded-md bg-[#8eb5db] dark:bg-[#1d2231] p-3 text-3xl text-[#474747] dark:text-white"
+            className="rounded-md bg-[#8eb5db] p-3 text-3xl text-[#474747] dark:bg-[#1d2231] dark:text-white"
             value={`${i + 1}`}
             onClick={() => {
               Change(`${i + 1}`);
@@ -116,7 +116,7 @@ const Calculator = () => {
           }}
         />
         <Buttons
-          className="rounded-md bg-[#8eb5db] dark:bg-[#1d2231] p-3 text-3xl text-[#474747] dark:text-white"
+          className="rounded-md bg-[#8eb5db] p-3 text-3xl text-[#474747] dark:bg-[#1d2231] dark:text-white"
           value={"0"}
           onClick={() => {
             Change("0");
@@ -154,7 +154,7 @@ const Calculator = () => {
           }
         />
         <Buttons
-          className="col-span-3 rounded-md bg-[#47474749] dark:bg-[#453a499f] p-3 text-2xl"
+          className="col-span-3 rounded-md bg-[#47474749] p-3 text-2xl dark:bg-[#453a499f]"
           value={
             <EqualsIcon className="mx-auto w-[20px] fill-[#474747] dark:fill-[#1d2231] lg:w-[25px]" />
           }

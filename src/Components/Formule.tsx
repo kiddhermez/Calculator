@@ -44,7 +44,10 @@ const Formule = ({
 
   const html = katex.renderToString(getFormules[boxedIndex]);
   return (
-    <span className="text-2xl md:text-3xl text-[#474747] dark:text-white" dangerouslySetInnerHTML={{ __html: html }} />
+    <span
+      className="text-2xl text-[#474747] dark:text-white md:text-3xl"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 };
 

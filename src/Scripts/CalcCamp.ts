@@ -4,7 +4,6 @@ const CalcResult = (
   Radius: string,
   ExpRadius: string
 ) => {
-
   if (Radius == "0" || Radius == "-0") {
     return "\\infty";
   }
@@ -28,6 +27,5 @@ const CalcResult = (
   }
 
   return `${temp.toString().substring(0, 5)}\\times 10^{${exp}}\\frac{N}{C}`;
-  
 };
 export default CalcResult;
