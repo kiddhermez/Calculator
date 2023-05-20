@@ -20,29 +20,20 @@ const Formule = ({
   ExpRadius,
   Result,
 }: Props) => {
-  const getFormules = [
-    `{\\purple{${Charge}}
-      \\times 10^{${ExpCharge}}C
-      \\over 4 \\pi \\epsilon_0 ({${Radius}
-      \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
+  const Data = {
+    charge: boxedIndex == 0 ? `\\purple{${Charge}}` : Charge,
+    expCharge: boxedIndex == 1 ? `\\purple{${ExpCharge}}` : ExpCharge,
+    radius: boxedIndex == 2 ? `\\purple{${Radius}}` : Radius,
+    expRadius: boxedIndex == 3 ? `\\purple{${ExpRadius}}` : ExpRadius,
+  };
 
-    `{${Charge}
-      \\times 10^{\\purple{${ExpCharge}}}C
-      \\over 4 \\pi \\epsilon_0 ({${Radius}
-      \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
+  const html = katex.renderToString(
+    `{${Data.charge}
+        \\times 10^{${Data.expCharge}}C
+        \\over 4 \\pi \\epsilon_0 ({${Data.radius}
+        \\times 10^{${Data.expRadius}}m})^2} = ${Result}`
+  );
 
-    `{${Charge}
-      \\times 10^{${ExpCharge}}C
-      \\over 4 \\pi \\epsilon_0 ({\\purple{${Radius}}
-      \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
-
-    `{${Charge}
-      \\times 10^{${ExpCharge}}C
-      \\over 4 \\pi \\epsilon_0 ({${Radius}
-      \\times 10^{\\purple{${ExpRadius}}}m})^2} = ${Result}`,
-  ];
-
-  const html = katex.renderToString(getFormules[boxedIndex]);
   return (
     <span
       className="text-2xl text-[#474747] dark:text-white md:text-3xl"
