@@ -1,11 +1,11 @@
-import React from "react";
+import { ButtonHTMLAttributes } from "react";
 
-interface Props {
-  value: number;
+interface Props extends ButtonHTMLAttributes<HTMLElement> {
+  value: any;
 }
 
-const Buttons = ({ value }: Props) => {
-  return <button className="text-3xl bg-slate-900 rounded-md p-3">{value}</button>;
+const Buttons = ({ value, ...props }: Props) => {
+  return <button {...props}>{value}</button>;
 };
 
 export default Buttons;

@@ -5,21 +5,46 @@ import katex from "katex";
 
 interface Props {
   boxedIndex: number;
+  Charge: string;
+  ExpCharge: string;
+  Radius: string;
+  ExpRadius: string;
+  Result: string;
 }
 
-const formules = [
-  "{\\orange{\\boxed{}} \\times 10^{\\boxed{}} \\over 4 \\pi \\epsilon_0 ({\\boxed{} \\times 10^{\\boxed{}}})^2}",
-  "{\\boxed{} \\times 10^{\\orange{\\boxed{}}} \\over 4 \\pi \\epsilon_0 ({\\boxed{} \\times 10^{\\boxed{}}})^2}",
-  "{\\boxed{} \\times 10^{\\boxed{}} \\over 4 \\pi \\epsilon_0 ({\\orange{\\boxed{}} \\times 10^{\\boxed{}}})^2}",
-  "{\\boxed{} \\times 10^{\\boxed{}} \\over 4 \\pi \\epsilon_0 ({\\boxed{} \\times 10^{\\orange{\\boxed{}}}})^2}",
-];
+const Formule = ({
+  boxedIndex,
+  Charge,
+  ExpCharge,
+  Radius,
+  ExpRadius,
+  Result,
+}: Props) => {
+  const getFormules = [
+    `{\\orange{${Charge}}
+      \\times 10^{${ExpCharge}}C
+      \\over 4 \\pi \\epsilon_0 ({${Radius}
+      \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
 
-const Formule = ({ boxedIndex }: Props) => {
-  const html = katex.renderToString(formules[boxedIndex]);
+    `{${Charge}
+      \\times 10^{\\orange{${ExpCharge}}}C
+      \\over 4 \\pi \\epsilon_0 ({${Radius}
+      \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
+
+    `{${Charge}
+      \\times 10^{${ExpCharge}}C
+      \\over 4 \\pi \\epsilon_0 ({\\orange{${Radius}}
+      \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
+
+    `{${Charge}
+      \\times 10^{${ExpCharge}}C
+      \\over 4 \\pi \\epsilon_0 ({${Radius}
+      \\times 10^{\\orange{${ExpRadius}}}m})^2} = ${Result}`,
+  ];
+
+  const html = katex.renderToString(getFormules[boxedIndex]);
   return (
-    <div className="text-5xl">
-      <span dangerouslySetInnerHTML={{ __html: html }} />
-    </div>
+    <span className="text-5xl" dangerouslySetInnerHTML={{ __html: html }} />
   );
 };
 
