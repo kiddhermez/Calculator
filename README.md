@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Eletric Field Calculator
 
-## Getting Started
+This is a WebSite to Calc the Electric Field, project elaborated to Physic's Area from University.
 
-First, run the development server:
+## Features
+
+* Theme Dark and light ☀️/🌙
+* Information about electric field ℹ️
+* Responsive Design 📱
+
+## Preview
+
+![ChangingTheme](public/changetheme.gif)
+
+---
+
+## How to deploy in local
+
+First, clone with git the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/kiddhermez/Calculator.git
+```
+
+Now, start the server:
+
+```bash
+cd Calculator
+npm dev start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Web on Versel
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+the webpage is pre-deploy thanks to Versel and is located to [this link](https://calculator-bay-delta.vercel.app)
+![look in versel](/public/using.png)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Put the Charge and his Exponential Value on the first and secod fields respectively, and the radius and his Exponential Value on the third and four places.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can move with the left and right arrows, and push any number to put the value in the screen (only one digit per space), when all felds are full you can press equal's button to know an aproximidity to the result
 
-## Deploy on Vercel
+If you press the C button all fields will be reset, and if you press Del the digit on the selected field will be erased
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+with the plus-minus button you can change the sign to the selected field.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Calculator
-# Calculator
+---
+
+## knowledge
+
+* [React](https://reactjs.org/)
+* [Next.js](https://nextjs.org/)
+* [Vercel](https://vercel.com/)
+* [Tailwind](https://tailwindcss.com)
