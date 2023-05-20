@@ -21,30 +21,30 @@ const Formule = ({
   Result,
 }: Props) => {
   const getFormules = [
-    `{\\orange{${Charge}}
+    `{\\purple{${Charge}}
       \\times 10^{${ExpCharge}}C
       \\over 4 \\pi \\epsilon_0 ({${Radius}
       \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
 
     `{${Charge}
-      \\times 10^{\\orange{${ExpCharge}}}C
+      \\times 10^{\\purple{${ExpCharge}}}C
       \\over 4 \\pi \\epsilon_0 ({${Radius}
       \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
 
     `{${Charge}
       \\times 10^{${ExpCharge}}C
-      \\over 4 \\pi \\epsilon_0 ({\\orange{${Radius}}
+      \\over 4 \\pi \\epsilon_0 ({\\purple{${Radius}}
       \\times 10^{${ExpRadius}}m})^2} = ${Result}`,
 
     `{${Charge}
       \\times 10^{${ExpCharge}}C
       \\over 4 \\pi \\epsilon_0 ({${Radius}
-      \\times 10^{\\orange{${ExpRadius}}}m})^2} = ${Result}`,
+      \\times 10^{\\purple{${ExpRadius}}}m})^2} = ${Result}`,
   ];
 
   const html = katex.renderToString(getFormules[boxedIndex]);
   return (
-    <span className="text-2xl md:text-3xl text-white" dangerouslySetInnerHTML={{ __html: html }} />
+    <span className="text-2xl md:text-3xl text-[#474747] dark:text-white" dangerouslySetInnerHTML={{ __html: html }} />
   );
 };
 

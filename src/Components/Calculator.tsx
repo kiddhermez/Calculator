@@ -81,8 +81,8 @@ const Calculator = () => {
   };
 
   return (
-    <div className="my-auto h-max w-[90vw] rounded-2xl bg-[#282F44] p-8 text-center md:w-[85vw]">
-      <section className="grid h-28 place-content-center rounded-lg bg-[#1d2231] md:p-10">
+    <div className="my-auto h-max w-[90vw] rounded-2xl bg-[#A2D2FF] dark:bg-[#282F44] p-8 text-center md:w-[85vw]">
+      <section className="grid h-28 place-content-center rounded-lg bg-[#8eb5db] dark:bg-[#1d2231] md:p-10">
         <Formule
           boxedIndex={selectedIndex}
           Charge={Charge}
@@ -96,7 +96,7 @@ const Calculator = () => {
       <section className="mt-5 grid grid-cols-3 gap-8">
         {[...Array(9)].map((x, i) => (
           <Buttons
-            className="rounded-md bg-[#1d2231] p-3 text-3xl text-white"
+            className="rounded-md bg-[#8eb5db] dark:bg-[#1d2231] p-3 text-3xl text-[#474747] dark:text-white"
             value={`${i + 1}`}
             onClick={() => {
               Change(`${i + 1}`);
@@ -105,7 +105,7 @@ const Calculator = () => {
         ))}
 
         <Buttons
-          className="p-3 text-xl text-white"
+          className="p-3 text-xl text-[#474747] dark:text-white"
           value={"C"}
           onClick={() => {
             setChargeValue("\\boxed{}");
@@ -116,14 +116,14 @@ const Calculator = () => {
           }}
         />
         <Buttons
-          className="rounded-md bg-[#1d2231] p-3 text-3xl text-white"
+          className="rounded-md bg-[#8eb5db] dark:bg-[#1d2231] p-3 text-3xl text-[#474747] dark:text-white"
           value={"0"}
           onClick={() => {
             Change("0");
           }}
         />
         <Buttons
-          className="p-3 text-xl text-white"
+          className="p-3 text-xl text-[#474747] dark:text-white"
           value="Del"
           onClick={() => {
             Change("\\boxed{}");
@@ -131,7 +131,7 @@ const Calculator = () => {
         />
         <Buttons
           value={
-            <ArrowLeftIcon className="mx-auto w-[20px] fill-[#1d2231] lg:w-[25px]" />
+            <ArrowLeftIcon className="mx-auto w-[20px] fill-[#47474783] dark:fill-[#1d2231] lg:w-[25px]" />
           }
           onClick={() =>
             setSelectedIndex(selectedIndex == 0 ? 3 : selectedIndex - 1)
@@ -139,7 +139,7 @@ const Calculator = () => {
         />
         <Buttons
           value={
-            <PlusMinusIcon className="mx-auto w-[10px] fill-[#1d2231] lg:w-[15px]" />
+            <PlusMinusIcon className="mx-auto w-[10px] fill-[#47474783] dark:fill-[#1d2231] lg:w-[15px]" />
           }
           onClick={() => {
             ChangeSign();
@@ -147,16 +147,16 @@ const Calculator = () => {
         />
         <Buttons
           value={
-            <ArrowRightIcon className="mx-auto w-[20px] fill-[#1d2231] lg:w-[25px]" />
+            <ArrowRightIcon className="mx-auto w-[20px] fill-[#47474783] dark:fill-[#1d2231] lg:w-[25px]" />
           }
           onClick={() =>
             setSelectedIndex(selectedIndex == 3 ? 0 : selectedIndex + 1)
           }
         />
         <Buttons
-          className="col-span-3 rounded-md bg-[#453a499f] p-3 text-2xl"
+          className="col-span-3 rounded-md bg-[#47474749] dark:bg-[#453a499f] p-3 text-2xl"
           value={
-            <EqualsIcon className="mx-auto w-[20px] fill-[#1d2231] lg:w-[25px]" />
+            <EqualsIcon className="mx-auto w-[20px] fill-[#474747] dark:fill-[#1d2231] lg:w-[25px]" />
           }
           onClick={() => {
             if (
