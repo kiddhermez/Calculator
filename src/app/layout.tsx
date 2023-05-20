@@ -1,9 +1,7 @@
 import Navbar from "@/Components/Navbar";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import PanelInfo from "@/Components/PanelInfo";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Rubik } from "next/font/google";
+const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Calculadora",
@@ -17,10 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
-        <div className="flex h-screen flex-col items-center bg-slate-500 ">
+      <body className={rubik.className}>
+        <div className="flex h-screen flex-col items-center bg-[#191D32] ">
           <Navbar />
-          <PanelInfo />
           {children}
         </div>
       </body>

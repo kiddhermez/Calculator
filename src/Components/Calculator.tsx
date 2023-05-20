@@ -81,8 +81,8 @@ const Calculator = () => {
   };
 
   return (
-    <div className="mt-12 h-max w-max rounded-2xl bg-gray-600 p-8 text-center">
-      <section className="grid h-28 place-content-center rounded-lg bg-white ">
+    <div className="my-auto h-max w-[90vw] rounded-2xl bg-[#282F44] p-8 text-center md:w-[85vw]">
+      <section className="grid h-28 place-content-center rounded-lg bg-[#1d2231] md:p-10">
         <Formule
           boxedIndex={selectedIndex}
           Charge={Charge}
@@ -96,7 +96,7 @@ const Calculator = () => {
       <section className="mt-5 grid grid-cols-3 gap-8">
         {[...Array(9)].map((x, i) => (
           <Buttons
-            className="rounded-md bg-slate-900 p-3 text-3xl"
+            className="rounded-md bg-[#1d2231] p-3 text-3xl text-white"
             value={`${i + 1}`}
             onClick={() => {
               Change(`${i + 1}`);
@@ -105,53 +105,67 @@ const Calculator = () => {
         ))}
 
         <Buttons
-          className="p-3 text-xl"
+          className="p-3 text-xl text-white"
           value={"C"}
           onClick={() => {
-            setChargeValue("");
-            setExpChargeValue("");
-            setRadiusValue("");
-            setExpRadiusValue("");
+            setChargeValue("\\boxed{}");
+            setExpChargeValue("\\boxed{}");
+            setRadiusValue("\\boxed{}");
+            setExpRadiusValue("\\boxed{}");
+            setResult("\\color{lightgray}{\\boxed{}}");
           }}
         />
         <Buttons
-          className="rounded-md bg-slate-900 p-3 text-3xl"
+          className="rounded-md bg-[#1d2231] p-3 text-3xl text-white"
           value={"0"}
           onClick={() => {
             Change("0");
           }}
         />
         <Buttons
-          className="p-3 text-xl"
+          className="p-3 text-xl text-white"
           value="Del"
           onClick={() => {
             Change("\\boxed{}");
           }}
         />
         <Buttons
-          value={<ArrowLeftIcon width={20} className="mx-auto" />}
+          value={
+            <ArrowLeftIcon className="mx-auto w-[20px] fill-[#1d2231] lg:w-[25px]" />
+          }
           onClick={() =>
             setSelectedIndex(selectedIndex == 0 ? 3 : selectedIndex - 1)
           }
         />
         <Buttons
-          value={<PlusMinusIcon width={10} className="mx-auto" />}
+          value={
+            <PlusMinusIcon className="mx-auto w-[10px] fill-[#1d2231] lg:w-[15px]" />
+          }
           onClick={() => {
             ChangeSign();
           }}
         />
         <Buttons
-          value={<ArrowRightIcon width={20} className="mx-auto" />}
+          value={
+            <ArrowRightIcon className="mx-auto w-[20px] fill-[#1d2231] lg:w-[25px]" />
+          }
           onClick={() =>
             setSelectedIndex(selectedIndex == 3 ? 0 : selectedIndex + 1)
           }
         />
         <Buttons
-          className="col-span-3 rounded-md bg-white p-3 text-2xl"
-          value={<EqualsIcon width={20} className="mx-auto" />}
-          onClick={()=>{
-            if(Charge.length<=2&&ExpCharge.length<=2&&Radius.length<=2&&ExpRadius.length<=2){
-              setResult(CalcResult(Charge,ExpCharge,Radius,ExpRadius));
+          className="col-span-3 rounded-md bg-[#453a499f] p-3 text-2xl"
+          value={
+            <EqualsIcon className="mx-auto w-[20px] fill-[#1d2231] lg:w-[25px]" />
+          }
+          onClick={() => {
+            if (
+              Charge.length <= 2 &&
+              ExpCharge.length <= 2 &&
+              Radius.length <= 2 &&
+              ExpRadius.length <= 2
+            ) {
+              setResult(CalcResult(Charge, ExpCharge, Radius, ExpRadius));
             }
           }}
         />
